@@ -1,0 +1,34 @@
+# Minimum iOS platform sürümünü belirt
+platform :ios, '12.0'
+
+# Pod dosyasındaki tüm uyarıları görmezden gelmek için (isteğe bağlı)
+inhibit_all_warnings!
+
+target 'Runner' do
+  # Dinamik framework'leri kullanmak için
+  use_frameworks!
+  use_modular_headers!
+
+  # Flutter'ın iOS bağımlılıklarını yüklemek için
+  flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
+
+  target 'RunnerTests' do
+    inherit! :search_paths
+    # Testler için podlar (gerekirse ekleyebilirsin)
+  end
+end
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '12.0'
+
+target 'Runner' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Runner
+
+  target 'RunnerTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
