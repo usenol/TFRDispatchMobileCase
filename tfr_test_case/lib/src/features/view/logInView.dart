@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../constants/custom_app_bar.dart';
+import '../../constants/route_constants.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
@@ -86,7 +87,12 @@ class LoginView extends StatelessWidget {
                   width: double.infinity,
                   height: 56,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(
+                        context,
+                        RouteConstants.allOrders,
+                      );
+                    },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.red,
                       shape: RoundedRectangleBorder(
